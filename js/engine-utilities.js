@@ -7,31 +7,31 @@
 // The purpose of this function is to determine in which slot to place our next enemy.
 // The possibilities are 0, 1, 2, 3 or 4.
 const nextEnemySpot = (enemies) => {
-    // enemySpots will refer to the number of spots available (can you calculate it?)
-    const enemySpots = GAME_WIDTH / ENEMY_WIDTH;
+  // enemySpots will refer to the number of spots available (can you calculate it?)
+  const enemySpots = GAME_WIDTH / ENEMY_WIDTH;
 
-    // To find out where to place an enemy, we first need to find out which are the spots available.
-    // We don't want to place two enemies in the same lane. To accomplish this, we first create an
-    // array with 5 elements (why 5?) and each element is false.
-    // We then use forEach to iterate through all the enemies.
-    // If you look at the constructor of the Enemy class, you can see that every instance will have a spot property.
-    // We can use this property to modify the spotsTaken array.
-    const spotsTaken = [false, false, false, false, false];
-    enemies.forEach((enemy) => {
-        spotsTaken[enemy.spot] = true;
-    });
+  // To find out where to place an enemy, we first need to find out which are the spots available.
+  // We don't want to place two enemies in the same lane. To accomplish this, we first create an
+  // array with 5 elements (why 5?) and each element is false.
+  // We then use forEach to iterate through all the enemies.
+  // If you look at the constructor of the Enemy class, you can see that every instance will have a spot property.
+  // We can use this property to modify the spotsTaken array.
+  const spotsTaken = [false, false, false, false, false];
+  enemies.forEach((enemy) => {
+    spotsTaken[enemy.spot] = true;
+  });
 
-    // We are now in a position to find out position. We declare a variable candidate that is initially undefined.
-    // candidate represents a potential spot. The variable will be repeatedly assigned different numbers.
-    // We will randomly try different spots until we find out that is available
-    let candidate = undefined;
-    while (candidate === undefined || spotsTaken[candidate]) {
-        // candidate is assigned a random number between 0 and enemySpots (not including enemySpots). (what number is enemySpots?)
-        candidate = Math.floor(Math.random() * enemySpots);
-    }
+  // We are now in a position to find out position. We declare a variable candidate that is initially undefined.
+  // candidate represents a potential spot. The variable will be repeatedly assigned different numbers.
+  // We will randomly try different spots until we find out that is available
+  let candidate = undefined;
+  while (candidate === undefined || spotsTaken[candidate]) {
+    // candidate is assigned a random number between 0 and enemySpots (not including enemySpots). (what number is enemySpots?)
+    candidate = Math.floor(Math.random() * enemySpots);
+  }
 
-    // When the while loop is finished, we are assured that we have a number that corresponds to a free spot, so we return it.
-    return candidate;
+  // When the while loop is finished, we are assured that we have a number that corresponds to a free spot, so we return it.
+  return candidate;
 };
 
 // addBackground contains all the logic to display the starry background of the game.
@@ -69,21 +69,19 @@ const nextEnemySpot = (enemies) => {
 */
 let secondsVar = 0;
 let minutesVar = 0;
-const timer = () => {
-    if (secondsVar === 59) {
-        //adds minute every 60 seconds
-        minutesVar++
-        secondsVar = 0;
-        minutes.innerText = `0${minutesVar} :`;
-        seconds.innerText = `0${secondsVar}`;
-    } else {
-        //increment second every second
-        secondsVar++;
-        minutes.innerText = `0${minutesVar} :`
-        const secondsInnerText = secondsVar < 0 ? `0${secondsVar}` : `${secondsVar}`;
-        seconds.innerText = secondsInnerText;
-    }
+function timer() {
+  if (secondsVar === 59) {
+    //adds minute every 60 seconds
+    minutesVar++;
+    secondsVar = 0;
+    minutes.innerText = `0${minutesVar} :`;
+    seconds.innerText = `0${secondsVar}`;
+  } else {
+    //increment second every second
+    secondsVar++;
+    minutes.innerText = `0${minutesVar} :`;
+    const secondsInnerText =
+      secondsVar < 0 ? `0${secondsVar}` : `${secondsVar}`;
+    seconds.innerText = secondsInnerText;
+  }
 }
-
-
-
