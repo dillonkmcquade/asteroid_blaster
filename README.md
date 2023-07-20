@@ -6,6 +6,14 @@
 
 The goal of the game is to avoid the asteroids and destroy as many as possible. A good score comprises a high kill count and a long round. The game is over after three lives have been used.
 
+### Run it
+
+```bash
+git clone https://github.com/dillonkmcquade/asteroid_blaster.git
+cd asteroid_blaster
+npm install && npm start
+```
+
 ### Major features
 
 - The player is limited to 3 lives per game
