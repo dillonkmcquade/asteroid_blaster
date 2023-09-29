@@ -1,11 +1,12 @@
 import { Enemy } from "./Enemy.js";
 import { Text } from "./Text.js";
-import { Utilities } from "./engine-utilities.js";
+import { Utilities } from "./Utilities.js";
 import { Player } from "./Player.js";
 import * as data from "./data.js";
 
 const killElement = document.getElementById("kills");
 const livesContainer = document.getElementById("lives-container");
+const minutes = document.getElementById("minutes");
 const utility = new Utilities();
 
 export class GameEngine {

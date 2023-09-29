@@ -1,5 +1,6 @@
 /* Game is started here */
 import { GameEngine } from "./Engine.js";
+import "../styles/styles.css";
 
 function main() {
   const gameEngine = new GameEngine(document.getElementById("app"));
