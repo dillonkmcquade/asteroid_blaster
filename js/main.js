@@ -1,6 +1,8 @@
 /* Game is started here */
+import { GameEngine } from "./Engine";
+import { Text } from "./Text";
 
-const gameEngine = new TheEngine(document.getElementById("app"));
+const gameEngine = new GameEngine(document.getElementById("app"));
 const textModal = new Text(
   document.getElementById("app"),
   "calc(20% - 51px)",

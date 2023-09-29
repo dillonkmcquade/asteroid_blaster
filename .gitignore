@@ -4,6 +4,7 @@
 *.swp
 *~.nib
 node_modules
+dist/
 # Thumbnails
 ._*
 

@@ -1,4 +1,4 @@
-class Enemy {
+export class Enemy {
   constructor(theRoot, enemySpot) {
     this.root = theRoot;
     this.spot = enemySpot;

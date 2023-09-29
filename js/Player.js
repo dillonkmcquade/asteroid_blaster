@@ -1,4 +1,5 @@
-class Player {
+import { Bullet } from "./Bullet";
+export class Player {
   constructor(root) {
     this.x = 8 * PLAYER_WIDTH;
     this.target = undefined;
@@ -48,6 +49,7 @@ class Player {
       this.kills += 1;
     }
   }
+
   resetKillCount() {
     this.kills = 0;
   }

@@ -1,7 +1,9 @@
+import { Player } from "./Player";
+import { Enemy } from "./Enemy";
 const killElement = document.getElementById("kills");
 const livesContainer = document.getElementById("lives-container");
 
-class TheEngine {
+export class GameEngine {
   constructor(theRoot) {
     this.root = theRoot;
     this.player = new Player(theRoot);
