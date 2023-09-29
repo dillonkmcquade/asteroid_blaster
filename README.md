@@ -1,6 +1,6 @@
 # Asteroid Blaster
 
-![image of game](images/optimized_app_gif.gif)
+![image of game](public/optimized_app_gif.gif)
 
 ## About
 
@@ -11,7 +11,7 @@ The goal of the game is to avoid the asteroids and destroy as many as possible. 
 ```bash
 git clone https://github.com/dillonkmcquade/asteroid_blaster.git
 cd asteroid_blaster
-npm install && npm start
+pnpm install && pnpm start
 ```
 
 ### Major features
