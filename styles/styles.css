@@ -19,7 +19,7 @@ th {
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-image: url("../images/stars2.jpg");
+  background-image: url("/stars2.jpg");
   background-position: center;
   background-size: cover;
 }

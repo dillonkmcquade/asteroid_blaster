@@ -17,13 +17,15 @@ export class Text {
   }
   createElementWithText(element, innerText) {
     if (innerText) {
-      return (document.createElement(element).innerText = innerText);
+      const doc = document.createElement(element);
+      doc.innerText = innerText;
+      return doc;
     }
     return document.createElement(element);
   }
   _appendChild(element, ...args) {
-    for (i in args) {
-      element.appendChild(i);
+    for (let i = 0; i < args.length; i++) {
+      element.appendChild(args[i]);
     }
   }
   displayScores(scores) {
@@ -39,16 +41,11 @@ export class Text {
     table.appendChild(row);
 
     // scores
-    scores.forEach((element, index) => {
+    scores.forEach((score, index) => {
       const row = document.createElement("tr");
-      const kills = this.createElement("td", `${element.kills}`);
-      const time = this.createElement(
-        "td",
-        `0${element.time.minutes}:${element.time.seconds < 10 ? 0 : ""}${
-          element.time.seconds
-        }`
-      );
-      const round = this.createElement("td", `${index + 1}`);
+      const kills = this.createElementWithText("td", `${score.kills}`);
+      const time = this.createElementWithText("td", `${score.time}`);
+      const round = this.createElementWithText("td", `${index + 1}`);
       this._appendChild(row, round, kills, time);
       table.appendChild(row);
     });
